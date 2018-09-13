@@ -1,9 +1,23 @@
-#  Local .terraform directories
-**/.terraform/*
-
-# .tfstate files
+# Compiled files
 *.tfstate
-*.tfstate.*
+*.tfstate.backup
 
-# .tfvars files
+# Module directory
+.terraform
+
+# Workspace directory
+terraform.tfstate.d
+
+# Terragrunt cache
+.terragrunt-cache
+
+# Python local files
+__pycache__
+
+# User state
+.filecache/
+*.exe
+*.msi
+*.rpm
+*.zip
 *.tfvars
