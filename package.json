@@ -10,6 +10,6 @@
     "url": "https://github.com/plus3it/terraform-aws-slack-notifier.git"
   },
   "dependencies": {
-    "aws-to-slack": "git+https://github.com/lorengordon/aws-to-slack.git#codecommit"
+    "aws-to-slack": "git+https://github.com/arabold/aws-to-slack.git#semver:1.1.7"
   }
 }
