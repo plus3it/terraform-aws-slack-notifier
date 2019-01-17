@@ -3,7 +3,7 @@ data "aws_iam_policy" "cloudwatch_readonly" {
 }
 
 module "lambda" {
-  source = "git::https://github.com/plus3it/terraform-aws-lambda.git?ref=v0.9.1"
+  source = "git::https://github.com/plus3it/terraform-aws-lambda.git?ref=v0.10.0"
 
   function_name = "${var.name}"
   description   = "Post messages from AWS to Slack"
