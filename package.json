@@ -1,6 +1,6 @@
 {
   "name": "terraform-aws-slack-notifier",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Forward AWS Notification Messages to Slack",
   "main": "node_modules/aws-to-slack/src/index.js",
   "author": "Plus3 IT Systems",
