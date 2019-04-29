@@ -8,7 +8,7 @@ module "lambda" {
   function_name = "${var.name}"
   description   = "Post messages from AWS to Slack"
   handler       = "aws-to-slack/src/index.handler"
-  runtime       = "nodejs6.10"
+  runtime       = "nodejs8.10"
   timeout       = 10
 
   source_path = "${path.module}/node_modules"
