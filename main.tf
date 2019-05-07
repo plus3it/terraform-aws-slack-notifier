@@ -38,11 +38,34 @@ resource "aws_cloudwatch_event_target" "this" {
   arn  = "${module.lambda.function_arn}"
 }
 
-resource "aws_lambda_permission" "this" {
+resource "aws_lambda_permission" "lambda" {
   count = "${length(var.event_rules)}"
 
   action        = "lambda:InvokeFunction"
   function_name = "${module.lambda.function_name}"
   principal     = "events.amazonaws.com"
   source_arn    = "${aws_cloudwatch_event_rule.this.*.arn[count.index]}"
+}
+
+resource "aws_sns_topic" "this" {
+  count = "${var.sns_trigger ? 1 : 0}"
+
+  name = "${var.name}"
+}
+
+resource "aws_sns_topic_subscription" "this" {
+  count = "${var.sns_trigger ? 1 : 0}"
+
+  topic_arn = "${aws_sns_topic.this.arn}"
+  protocol  = "lambda"
+  endpoint  = "${module.lambda.function_arn}"
+}
+
+resource "aws_lambda_permission" "sns" {
+  count = "${var.sns_trigger ? 1 : 0}"
+
+  action        = "lambda:InvokeFunction"
+  function_name = "${module.lambda.function_name}"
+  principal     = "sns.amazonaws.com"
+  source_arn    = "${aws_sns_topic.this.arn}"
 }

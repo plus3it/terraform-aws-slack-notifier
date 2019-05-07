@@ -14,3 +14,9 @@ variable "event_rules" {
   type        = "list"
   default     = []
 }
+
+variable "sns_trigger" {
+  description = "(Optional) Toggle to control whether to create an SNS topic and subscription for the lambda function"
+  type        = "string"
+  default     = false
+}
