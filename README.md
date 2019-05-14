@@ -1,3 +1,5 @@
+[![pullreminders](https://pullreminders.com/badge.svg)](https://pullreminders.com?ref=badge)
+
 # terraform-aws-slack-notifier
 
 Terraform module that builds and deploys a lamdbda function for the
