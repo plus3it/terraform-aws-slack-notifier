@@ -59,6 +59,7 @@ module "aws-to-slack" {
 | `hook_url` | Slack webhook URL; see <https://api.slack.com/incoming-webhooks> | string | - |
 | `name` | (Optional) Name to associate with the lambda function | string | `"aws-to-slack"` |
 | `event_rules` | (Optional) List of config maps of CloudWatch Event Rules that will trigger notifications | string | `[]` |
+| `sns_trigger` | (Optional) Toggle to control whether to create an SNS topic and subscription for the lambda function | bool | `false` |
 
 ### Details for `event_rules`
 
