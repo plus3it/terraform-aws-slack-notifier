@@ -17,8 +17,9 @@ module "lambda" {
 
   source_path = "${path.module}/node_modules"
 
-  attach_policy = "true"
-  policy        = data.aws_iam_policy.cloudwatch_readonly.policy
+  policy = {
+    json = data.aws_iam_policy.cloudwatch_readonly.policy
+  }
 
   environment = {
     variables = {
