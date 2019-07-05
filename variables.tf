@@ -11,7 +11,11 @@ variable "name" {
 
 variable "event_rules" {
   description = "(Optional) List of config maps of CloudWatch Event Rules that will trigger notifications"
-  type        = list(string)
+  type        = list(object({
+    name        = string
+    description = string
+    pattern     = string
+  }))
   default     = []
 }
 
