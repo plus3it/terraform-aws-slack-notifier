@@ -20,15 +20,15 @@ output "role_name" {
 
 output "events_rule_arns" {
   description = "ARNs of the CloudWatch Event Rules"
-  value       = aws_cloudwatch_event_rule.this.*.arn
+  value       = aws_cloudwatch_event_rule.this[*].arn
 }
 
 output "sns_topic_arn" {
   description = "ARN of the SNS Topic"
-  value       = join("", aws_sns_topic.this.*.arn)
+  value       = aws_sns_topic.this[0].arn
 }
 
-output "sns_topic_subscription_arn" {
+output "sns_topic_subscription_arns" {
   description = "ARN of the SNS Topic Subscription"
-  value       = join("", aws_sns_topic_subscription.this.*.arn)
+  value       = [for topic in aws_sns_topic_subscription.this : topic.arn]
 }
