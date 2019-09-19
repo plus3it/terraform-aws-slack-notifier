@@ -15,8 +15,14 @@ variable "event_rules" {
   default     = []
 }
 
-variable "sns_trigger" {
-  description = "(Optional) Toggle to control whether to create an SNS topic and subscription for the lambda function"
+variable "create_sns_topic" {
+  description = "(Optional) Creates an SNS topic and subscribes the lambda function; conflicts with `sns_topics`"
   type        = bool
   default     = false
+}
+
+variable "sns_topics" {
+  description = "(Optional) List of SNS ARNs the lambda function will be subscribed to; conflicts with `create_sns_topic`"
+  type        = list(string)
+  default     = []
 }

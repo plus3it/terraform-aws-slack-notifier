@@ -61,24 +61,24 @@ resource "aws_lambda_permission" "lambda" {
 }
 
 resource "aws_sns_topic" "this" {
-  count = var.sns_trigger ? 1 : 0
+  count = var.create_sns_topic ? 1 : 0
 
   name = var.name
 }
 
 resource "aws_sns_topic_subscription" "this" {
-  count = var.sns_trigger ? 1 : 0
+  for_each = var.create_sns_topic ? { "arn" : aws_sns_topic.this[0].arn } : { for arn in var.sns_topics : arn => arn }
 
-  topic_arn = aws_sns_topic.this[0].arn
+  topic_arn = each.value
   protocol  = "lambda"
   endpoint  = module.lambda.function_arn
 }
 
 resource "aws_lambda_permission" "sns" {
-  count = var.sns_trigger ? 1 : 0
+  for_each = var.create_sns_topic ? { "arn" : aws_sns_topic.this[0].arn } : { for arn in var.sns_topics : arn => arn }
 
   action        = "lambda:InvokeFunction"
   function_name = module.lambda.function_name
   principal     = "sns.amazonaws.com"
-  source_arn    = aws_sns_topic.this[0].arn
+  source_arn    = each.value
 }
