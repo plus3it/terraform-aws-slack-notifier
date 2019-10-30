@@ -5,5 +5,5 @@ module "test_sns" {
 
   name = "test-sns-aws-to-slack"
 
-  sns_trigger = true
+  create_sns_topic = true
 }
