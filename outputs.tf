@@ -25,7 +25,7 @@ output "events_rule_arns" {
 
 output "sns_topic_arn" {
   description = "ARN of the SNS Topic"
-  value       = aws_sns_topic.this[0].arn
+  value       = length(aws_sns_topic.this) > 0 ? aws_sns_topic.this[0].arn : null
 }
 
 output "sns_topic_subscription_arns" {
