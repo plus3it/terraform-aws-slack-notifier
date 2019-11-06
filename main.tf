@@ -15,7 +15,7 @@ module "lambda" {
   runtime       = "nodejs10.x"
   timeout       = 10
 
-  source_path = "${path.module}/node_modules"
+  source_path = "${path.module}/vendor"
 
   policy = {
     json = data.aws_iam_policy.cloudwatch_readonly.policy

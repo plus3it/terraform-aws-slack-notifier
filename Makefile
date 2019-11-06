@@ -30,3 +30,12 @@ terraform/lint: | guard/program/terraform
 	@ echo "[$@]: Linting Terraform files..."
 	terraform fmt -check=true -diff=true
 	@ echo "[$@]: Terraform files PASSED lint test!"
+
+clean:
+	rm -rf ./node_modules ./vendor
+
+package: clean
+	npm install --production  # Creates node_modules and downloads/installs dependencies from package.json
+	mkdir -p ./vendor
+	mv ./node_modules/aws-to-slack ./vendor
+	mv ./node_modules ./vendor
