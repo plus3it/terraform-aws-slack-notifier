@@ -31,7 +31,7 @@ module "aws-to-slack" {
 To trigger notifications from CloudWatch Event Rules, use the variable
 `event_rules`. This will create the `aws-to-slack` lambda function, the
 specified event rule(s), and the trigger, and it will add the necessary
-permissions to the lambda function. See the section [Details for `event_rules`](details-for-event_rules).
+permissions to the lambda function. See the section [Details for `event_rules`](#details-for-event_rules).
 
 ```hcl
 module "aws-to-slack" {
