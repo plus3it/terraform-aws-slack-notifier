@@ -1,5 +1,7 @@
 language: bash
 
+if: branch = master OR type = pull_request
+
 env:
   global:
     - REPO="${TRAVIS_REPO_SLUG#*/}"
