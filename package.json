@@ -1,15 +1,15 @@
 {
-  "name": "terraform-aws-slack-notifier",
-  "version": "3.2.0",
-  "description": "Forward AWS Notification Messages to Slack",
-  "main": "node_modules/aws-to-slack/src/index.js",
-  "author": "Plus3 IT Systems",
-  "license": "Apache-2.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/plus3it/terraform-aws-slack-notifier.git"
-  },
-  "dependencies": {
-    "aws-to-slack": "git+https://github.com/arabold/aws-to-slack.git#semver:1.3.0"
-  }
+    "author": "Plus3 IT Systems",
+    "dependencies": {
+        "aws-to-slack": "git+https://github.com/arabold/aws-to-slack.git#semver:1.3.0"
+    },
+    "description": "Forward AWS Notification Messages to Slack",
+    "license": "Apache-2.0",
+    "main": "node_modules/aws-to-slack/src/index.js",
+    "name": "terraform-aws-slack-notifier",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/plus3it/terraform-aws-slack-notifier.git"
+    },
+    "version": "3.2.0"
 }

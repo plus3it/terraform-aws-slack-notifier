@@ -1,64 +1,64 @@
 {
-  "_args": [
-    [
-      "git+https://github.com/arabold/aws-to-slack.git#semver:1.3.0",
-      "/home/loren/win/Documents/GitHub/terraform-aws-slack-notifier"
-    ]
-  ],
-  "_from": "git+https://github.com/arabold/aws-to-slack.git#semver:1.3.0",
-  "_id": "aws-to-slack@git+https://github.com/arabold/aws-to-slack.git#a87a86f76f5d035613f1ec359ab36a3507df7948",
-  "_inBundle": false,
-  "_integrity": "",
-  "_location": "/aws-to-slack",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "git",
-    "raw": "git+https://github.com/arabold/aws-to-slack.git#semver:1.3.0",
-    "rawSpec": "git+https://github.com/arabold/aws-to-slack.git#semver:1.3.0",
-    "saveSpec": "git+https://github.com/arabold/aws-to-slack.git#semver:1.3.0",
-    "fetchSpec": "https://github.com/arabold/aws-to-slack.git",
-    "gitRange": "1.3.0",
-    "gitCommittish": null
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "git+https://github.com/arabold/aws-to-slack.git#a87a86f76f5d035613f1ec359ab36a3507df7948",
-  "_spec": "git+https://github.com/arabold/aws-to-slack.git#semver:1.3.0",
-  "_where": "/home/loren/win/Documents/GitHub/terraform-aws-slack-notifier",
-  "author": {
-    "name": "Andre Rabold"
-  },
-  "bugs": {
-    "url": "https://github.com/arabold/aws-to-slack/issues"
-  },
-  "dependencies": {
-    "lodash": "^4.17.14"
-  },
-  "description": "Forward AWS Notification Messages to Slack",
-  "devDependencies": {
-    "aws-sdk": "^2.463.0",
-    "eslint": "^5.16.0",
-    "eslint-plugin-import": "^2.17.3",
-    "eslint-plugin-lodash": "^2.7.0",
-    "eslint-plugin-promise": "^4.1.1",
-    "jest": "^24.8.0"
-  },
-  "engines": {
-    "node": ">=10.16.3"
-  },
-  "homepage": "https://github.com/arabold/aws-to-slack#readme",
-  "license": "MIT",
-  "main": "src/index.js",
-  "name": "aws-to-slack",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/arabold/aws-to-slack.git"
-  },
-  "scripts": {
-    "lint": "eslint . --ext .jsx --ext .js || exit 0",
-    "test": "jest test",
-    "watch": "jest test --watch"
-  },
-  "version": "1.3.0"
+    "_args": [
+        [
+            "git+https://github.com/arabold/aws-to-slack.git#semver:1.3.0",
+            "/home/loren/win/Documents/GitHub/terraform-aws-slack-notifier"
+        ]
+    ],
+    "_from": "git+https://github.com/arabold/aws-to-slack.git#semver:1.3.0",
+    "_id": "aws-to-slack@git+https://github.com/arabold/aws-to-slack.git#a87a86f76f5d035613f1ec359ab36a3507df7948",
+    "_inBundle": false,
+    "_integrity": "",
+    "_location": "/aws-to-slack",
+    "_phantomChildren": {},
+    "_requested": {
+        "fetchSpec": "https://github.com/arabold/aws-to-slack.git",
+        "gitCommittish": null,
+        "gitRange": "1.3.0",
+        "raw": "git+https://github.com/arabold/aws-to-slack.git#semver:1.3.0",
+        "rawSpec": "git+https://github.com/arabold/aws-to-slack.git#semver:1.3.0",
+        "saveSpec": "git+https://github.com/arabold/aws-to-slack.git#semver:1.3.0",
+        "type": "git"
+    },
+    "_requiredBy": [
+        "/"
+    ],
+    "_resolved": "git+https://github.com/arabold/aws-to-slack.git#a87a86f76f5d035613f1ec359ab36a3507df7948",
+    "_spec": "git+https://github.com/arabold/aws-to-slack.git#semver:1.3.0",
+    "_where": "/home/loren/win/Documents/GitHub/terraform-aws-slack-notifier",
+    "author": {
+        "name": "Andre Rabold"
+    },
+    "bugs": {
+        "url": "https://github.com/arabold/aws-to-slack/issues"
+    },
+    "dependencies": {
+        "lodash": "^4.17.14"
+    },
+    "description": "Forward AWS Notification Messages to Slack",
+    "devDependencies": {
+        "aws-sdk": "^2.463.0",
+        "eslint": "^5.16.0",
+        "eslint-plugin-import": "^2.17.3",
+        "eslint-plugin-lodash": "^2.7.0",
+        "eslint-plugin-promise": "^4.1.1",
+        "jest": "^24.8.0"
+    },
+    "engines": {
+        "node": ">=10.16.3"
+    },
+    "homepage": "https://github.com/arabold/aws-to-slack#readme",
+    "license": "MIT",
+    "main": "src/index.js",
+    "name": "aws-to-slack",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/arabold/aws-to-slack.git"
+    },
+    "scripts": {
+        "lint": "eslint . --ext .jsx --ext .js || exit 0",
+        "test": "jest test",
+        "watch": "jest test --watch"
+    },
+    "version": "1.3.0"
 }

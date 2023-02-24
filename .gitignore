@@ -21,3 +21,7 @@ __pycache__
 *.rpm
 *.zip
 *.tfvars
+
+# Tardigrade-ci
+.tardigrade-ci
+tardigrade-ci/

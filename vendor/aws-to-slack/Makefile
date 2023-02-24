@@ -4,23 +4,23 @@ RELEASE_ZIP = release.zip
 
 # Load from .env file
 ifdef TARGET
-  include $(TARGET)
-  export
+	include $(TARGET)
+	export
 endif
 
 # Dependency definitions
 ifdef AWS_REGION
-  regionArg= --region $(AWS_REGION)
+	regionArg= --region $(AWS_REGION)
 endif
 ifndef LAMBDA_NAME
-  ifndef STACK_ID
-  usesLambdaName := create-stack load-lambda-name
-  else
-  usesLambdaName := load-lambda-name
-  endif
+	ifndef STACK_ID
+	usesLambdaName := create-stack load-lambda-name
+	else
+	usesLambdaName := load-lambda-name
+	endif
 endif
 ifeq (,$(wildcard $(RELEASE_ZIP)))
-  usesReleaseZip := package
+	usesReleaseZip := package
 endif
 
 
@@ -92,11 +92,11 @@ deploy: $(usesReleaseZip) $(usesLambdaName)
 
 # Copy local files to global S3 deployment buckets
 REGIONS ?= \
-  us-east-1 us-east-2 us-west-1 us-west-2 \
-  eu-central-1 eu-west-1 eu-west-2 eu-west-3 \
-  ap-northeast-1 ap-northeast-2 ap-south-1 ap-southeast-1 ap-southeast-2 \
-  ca-central-1 sa-east-1
-  # disabled: cn-north-1 cn-northwest-1
+	us-east-1 us-east-2 us-west-1 us-west-2 \
+	eu-central-1 eu-west-1 eu-west-2 eu-west-3 \
+	ap-northeast-1 ap-northeast-2 ap-south-1 ap-southeast-1 ap-southeast-2 \
+	ca-central-1 sa-east-1
+	# disabled: cn-north-1 cn-northwest-1
 .PHONY: publish
 publish: $(usesReleaseZip) $(REGIONS)
 $(REGIONS):
