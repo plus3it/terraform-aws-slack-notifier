@@ -1,6 +1,6 @@
 /**
 	Based on `aws-cloudwatch-chart`, a Node module to draw charts for AWS CloudWatch metrics
-    @see https://github.com/jeka-kiselyov/aws-cloudwatch-chart
+	@see https://github.com/jeka-kiselyov/aws-cloudwatch-chart
 
 	Usage:
 	```js
