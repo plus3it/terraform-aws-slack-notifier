@@ -22,7 +22,7 @@ module "lambda" {
   }
 
   environment_variables = {
-      SLACK_HOOK_URL = var.hook_url
+    SLACK_HOOK_URL = var.hook_url
   }
 }
 
