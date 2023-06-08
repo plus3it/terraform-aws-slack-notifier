@@ -21,7 +21,7 @@ module "lambda" {
     json = data.aws_iam_policy.cloudwatch_readonly.policy
   }
 
-  environment_variables
+  environment_variables = {
       SLACK_HOOK_URL = var.hook_url
   }
 }
