@@ -14,8 +14,6 @@ module "lambda" {
   handler       = "aws-to-slack/src/index.handler"
   runtime       = "nodejs14.x"
   timeout       = 10
-  source_path = "../src/lambda-function1"
-
 
   source_path = "${path.module}/vendor"
 
