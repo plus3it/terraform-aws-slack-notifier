@@ -17,9 +17,7 @@ module "lambda" {
 
   source_path = "${path.module}/vendor"
 
-  policy = {
-    json = data.aws_iam_policy.cloudwatch_readonly.policy
-  }
+  policy = data.aws_iam_policy.cloudwatch_readonly.policy
 
   environment_variables = {
     SLACK_HOOK_URL = var.hook_url
