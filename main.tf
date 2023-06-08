@@ -46,14 +46,14 @@ resource "aws_cloudwatch_event_target" "this" {
   count = length(var.event_rules)
 
   rule = aws_cloudwatch_event_rule.this[count.index].name
-  arn  = module.lambda.function_arn
+  arn  = module.lambda.lambda_function_arn
 }
 
 resource "aws_lambda_permission" "lambda" {
   count = length(var.event_rules)
 
   action        = "lambda:InvokeFunction"
-  function_name = module.lambda.function_name
+  function_name = module.lambda.lambda_function_name
   principal     = "events.amazonaws.com"
   source_arn    = aws_cloudwatch_event_rule.this[count.index].arn
 }
@@ -69,14 +69,14 @@ resource "aws_sns_topic_subscription" "this" {
 
   topic_arn = each.value
   protocol  = "lambda"
-  endpoint  = module.lambda.function_arn
+  endpoint  = module.lambda.lambda_function_arn
 }
 
 resource "aws_lambda_permission" "sns" {
   for_each = var.create_sns_topic ? { "arn" : aws_sns_topic.this[0].arn } : { for arn in var.sns_topics : arn => arn }
 
   action        = "lambda:InvokeFunction"
-  function_name = module.lambda.function_name
+  function_name = module.lambda.lambda_function_name
   principal     = "sns.amazonaws.com"
   source_arn    = each.value
 }
