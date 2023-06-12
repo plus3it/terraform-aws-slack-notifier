@@ -21,6 +21,12 @@ variable "create_sns_topic" {
   default     = false
 }
 
+variable "sns_topics" {
+  description = "(Optional) List of SNS ARNs the lambda function will be subscribed to; conflicts with `create_sns_topic`"
+  type        = list(string)
+  default     = []
+}
+
 variable "lambda" {
   description = "Object of optional attributes passed on to the lambda module"
   type = object({
