@@ -114,8 +114,8 @@ Apache 2 licensed. See the [LICENSE.md](LICENSE.md) file for details.
 | <a name="input_hook_url"></a> [hook\_url](#input\_hook\_url) | Slack webhook URL; see <https://api.slack.com/incoming-webhooks> | `string` | n/a | yes |
 | <a name="input_create_sns_topic"></a> [create\_sns\_topic](#input\_create\_sns\_topic) | (Optional) Creates an SNS topic and subscribes the lambda function; conflicts with `sns_topics` | `bool` | `false` | no |
 | <a name="input_event_rules"></a> [event\_rules](#input\_event\_rules) | (Optional) List of config maps of CloudWatch Event Rules that will trigger notifications | `list(map(string))` | `[]` | no |
+| <a name="input_lambda"></a> [lambda](#input\_lambda) | Object of optional attributes passed on to the lambda module | <pre>object({<br>    artifacts_dir            = optional(string, "builds")<br>    build_in_docker          = optional(bool, false)<br>    create_package           = optional(bool, true)<br>    ephemeral_storage_size   = optional(number)<br>    ignore_source_code_hash  = optional(bool, true)<br>    local_existing_package   = optional(string)<br>    memory_size              = optional(number, 128)<br>    recreate_missing_package = optional(bool, false)<br>    runtime                  = optional(string, "nodejs14.x")<br>    s3_bucket                = optional(string)<br>    s3_existing_package      = optional(map(string))<br>    s3_prefix                = optional(string)<br>    store_on_s3              = optional(bool, false)<br>    timeout                  = optional(number, 300)<br>  })</pre> | `{}` | no |
 | <a name="input_name"></a> [name](#input\_name) | (Optional) Name to associate with the lambda function | `string` | `"aws-to-slack"` | no |
-| <a name="input_sns_topics"></a> [sns\_topics](#input\_sns\_topics) | (Optional) List of SNS ARNs the lambda function will be subscribed to; conflicts with `create_sns_topic` | `list(string)` | `[]` | no |
 
 ## Outputs
 
