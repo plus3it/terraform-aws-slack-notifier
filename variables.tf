@@ -45,5 +45,6 @@ variable "lambda" {
     store_on_s3              = optional(bool, false)
     timeout                  = optional(number, 300)
   })
+  nullable = false
   default = {}
 }

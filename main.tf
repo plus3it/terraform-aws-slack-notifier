@@ -7,7 +7,7 @@ data "aws_iam_policy" "cloudwatch_readonly" {
 }
 
 module "lambda" {
-  source = "git::https://github.com/terraform-aws-modules/terraform-aws-lambda?ref=v5.0.0"
+  source = "git::https://github.com/terraform-aws-modules/terraform-aws-lambda?ref=v4.18.0"
 
   function_name            = var.name
   description              = "Post messages from AWS to Slack"
@@ -27,7 +27,13 @@ module "lambda" {
   store_on_s3              = var.lambda.store_on_s3
   timeout                  = var.lambda.timeout
 
-  source_path = "${path.module}/vendor"
+  source_path = [
+    {
+      path             = "${path.module}/src"
+      pip_requirements = true
+      patterns         = ["!\\.terragrunt-source-manifest"]
+    }
+  ]
 
   policy = data.aws_iam_policy.cloudwatch_readonly.policy
 
