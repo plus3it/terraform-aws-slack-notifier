@@ -27,13 +27,7 @@ module "lambda" {
   store_on_s3              = var.lambda.store_on_s3
   timeout                  = var.lambda.timeout
 
-  source_path = [
-    {
-      path             = "${path.module}/src"
-      pip_requirements = true
-      patterns         = ["!\\.terragrunt-source-manifest"]
-    }
-  ]
+  source_path = "${path.module}/vendor"
 
   policy = data.aws_iam_policy.cloudwatch_readonly.policy
 
