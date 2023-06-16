@@ -46,5 +46,5 @@ variable "lambda" {
     timeout                  = optional(number, 300)
   })
   nullable = false
-  default = {}
+  default  = {}
 }
