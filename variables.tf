@@ -26,3 +26,25 @@ variable "sns_topics" {
   type        = list(string)
   default     = []
 }
+
+variable "lambda" {
+  description = "Object of optional attributes passed on to the lambda module"
+  type = object({
+    artifacts_dir            = optional(string, "builds")
+    build_in_docker          = optional(bool, false)
+    create_package           = optional(bool, true)
+    ephemeral_storage_size   = optional(number)
+    ignore_source_code_hash  = optional(bool, true)
+    local_existing_package   = optional(string)
+    memory_size              = optional(number, 128)
+    recreate_missing_package = optional(bool, false)
+    runtime                  = optional(string, "nodejs14.x")
+    s3_bucket                = optional(string)
+    s3_existing_package      = optional(map(string))
+    s3_prefix                = optional(string)
+    store_on_s3              = optional(bool, false)
+    timeout                  = optional(number, 300)
+  })
+  nullable = false
+  default  = {}
+}

@@ -1,21 +1,21 @@
 output "function_arn" {
   description = "The ARN of the Lambda function"
-  value       = module.lambda.function_arn
+  value       = module.lambda.lambda_function_arn
 }
 
 output "function_name" {
   description = "The name of the Lambda function"
-  value       = module.lambda.function_name
+  value       = module.lambda.lambda_function_name
 }
 
 output "role_arn" {
   description = "The ARN of the IAM role created for the Lambda function"
-  value       = module.lambda.role_arn
+  value       = module.lambda.lambda_role_arn
 }
 
 output "role_name" {
   description = "The name of the IAM role created for the Lambda function"
-  value       = module.lambda.role_name
+  value       = module.lambda.lambda_role_name
 }
 
 output "events_rule_arns" {
