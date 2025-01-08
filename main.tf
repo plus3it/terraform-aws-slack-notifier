@@ -2,12 +2,8 @@ terraform {
   required_version = ">= 0.12"
 }
 
-data "aws_iam_policy" "cloudwatch_readonly" {
-  arn = "arn:aws:iam::aws:policy/CloudWatchReadOnlyAccess"
-}
-
 module "lambda" {
-  source = "git::https://github.com/terraform-aws-modules/terraform-aws-lambda?ref=v6.0.0"
+  source = "git::https://github.com/terraform-aws-modules/terraform-aws-lambda?ref=v7.17.1"
 
   function_name            = var.name
   description              = "Post messages from AWS to Slack"
@@ -34,8 +30,6 @@ module "lambda" {
       patterns         = ["!\\.terragrunt-source-manifest"]
     }
   ]
-
-  policy = data.aws_iam_policy.cloudwatch_readonly.policy
 
   environment_variables = {
     SLACK_HOOK_URL = var.hook_url

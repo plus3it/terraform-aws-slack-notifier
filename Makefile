@@ -1,4 +1,5 @@
 SHELL := /bin/bash
+ONLY_MOTO := true
 
 export FIND_EXCLUDES := ':!:vendor/*' ':!:*/.terraform/*' ':!:*/.terragrunt-cache/*'
 
