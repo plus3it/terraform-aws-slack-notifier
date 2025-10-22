@@ -38,7 +38,7 @@ variable "lambda" {
     local_existing_package   = optional(string)
     memory_size              = optional(number, 128)
     recreate_missing_package = optional(bool, false)
-    runtime                  = optional(string, "nodejs14.x")
+    runtime                  = optional(string, "nodejs22.x")
     s3_bucket                = optional(string)
     s3_existing_package      = optional(map(string))
     s3_prefix                = optional(string)
