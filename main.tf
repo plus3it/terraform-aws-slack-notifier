@@ -3,7 +3,7 @@ terraform {
 }
 
 module "lambda" {
-  source = "git::https://github.com/terraform-aws-modules/terraform-aws-lambda?ref=v8.2.0"
+  source = "git::https://github.com/terraform-aws-modules/terraform-aws-lambda?ref=v8.3.0"
 
   function_name            = var.name
   description              = "Post messages from AWS to Slack"
